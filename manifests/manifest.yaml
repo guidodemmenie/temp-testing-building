@@ -1,0 +1,29 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: vscode
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vscode-container
+  namespace: vscode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vscode-container
+  template:
+    metadata:
+      labels:
+        app: vscode-container
+    spec:
+      containers:
+      - name: vscode-container
+        image: pipeline-added
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+          #fsGroup: 2000
+        command: ["/bin/sh", "-c", "while sleep 1000; do :; done"]
+  
