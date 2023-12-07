@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: vscode-container
-        image: pipeline-added
+        image: registry.container-registry:5000/coding-container
         securityContext:
           runAsUser: 1000
           runAsGroup: 1000
