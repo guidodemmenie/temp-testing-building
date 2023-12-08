@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vscode-container
-        image: registry.container-registry:5000/coding-container
+        image: localhost:32000/coding-container
         securityContext:
           runAsUser: 1000
           runAsGroup: 1000
