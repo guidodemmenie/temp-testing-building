@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vscode-container
-  namespace: vscode
+  namespace: vscodes
 spec:
   replicas: 1
   selector:
